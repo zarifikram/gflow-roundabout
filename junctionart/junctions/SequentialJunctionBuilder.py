@@ -1,3 +1,4 @@
+import os, dill
 import pyodrx, math
 import numpy as np
 import logging
@@ -162,13 +163,13 @@ class SequentialJunctionBuilder(JunctionBuilder):
                 # create a long curve
                 currentLength = np.random.uniform(currentLength, self.maxConnectionLength)
                 curvature = AngleCurvatureMap.getCurvatureForAngleBetweenRoadAndLength(angleBetweenEndpoints, currentLength, curveType)
-                logging.debug(f"{self.name}: extending curve length")
+                logging.info(f"{self.name}: extending curve length")
         # print(f"curve length: {currentLength}") 
         if currentLength < self.minConnectionLength:
             # raise Exception(f"{self.name}: createGeoConnectionCurve current length {currentLength} is less than min length {self.minConnectionLength}")
             currentLength = self.minConnectionLength
             curvature = AngleCurvatureMap.getCurvatureForAngleBetweenRoadAndLength(angleBetweenEndpoints, currentLength, curveType)
-            logging.debug(f"{self.name}: extending curve length to min length {self.minConnectionLength}")
+            logging.info(f"{self.name}: extending curve length to min length {self.minConnectionLength}")
 
 
         logging.debug(f"{self.name}: Curvature for angle {math.degrees(angleBetweenEndpoints)} is {curvature}")

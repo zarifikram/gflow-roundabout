@@ -27,9 +27,6 @@ Run these commands in order
     pip install --upgrade pip
     conda install -c conda-forge shapely
     conda install -c conda-forge matplotlib
-    conda install -c conda-forge tabulate
-    conda install -c conda-forge psutil
-    conda install -c conda-forge scikit-spatial
     poetry install
 :::
 OR 
@@ -40,9 +37,6 @@ OR
     pip install --upgrade pip
     conda install -c conda-forge shapely
     conda install -c conda-forge matplotlib
-    conda install -c conda-forge tabulate
-    conda install -c conda-forge psutil
-    conda install -c conda-forge scikit-spatial
     poetry install
 :::
 
@@ -51,7 +45,7 @@ If you are going to use the analysis tools, you need to make sure libgeos_c is i
 
 
 ### Option 1: Install via conda (recommended)
-1. Activate or create a conda environment for the project with python 3.7+
+1. Activate or create a conda environment for the project with python 3.6+
 2. Put the name of your environment in the first line of requirements.yml file (located in the root).
 
 ```
